@@ -2,12 +2,20 @@
   "name": "instagram-poster",
   "author": "James Grams <james@game103.net> (https://game103.net)",
   "version": "1.0.0",
-  "description": "A simple script to post an image to Instagram using Puppeteer",
+  "description": "CLI to post images to Instagram using Puppeteer",
   "main": "index.js",
-  "private": true,
-  "scripts": {
-    "start": "node index.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamesgrams/instagram-poster.git"
   },
+  "license": "MIT",
+  "keywords": [
+    "instagram",
+    "media",
+    "image",
+    "post",
+    "puppeteer"
+  ],
   "dependencies": {
     "puppeteer": "^1.11.0",
     "minimist": "^1.2.0"
@@ -15,10 +23,5 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not ie <= 8"
-  ]
+  }
 }
