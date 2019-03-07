@@ -180,7 +180,7 @@ async function run() {
  * Print the correct usage of this program.
  */
 function usage() {
-    console.log("Usage: node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>]");
+    console.log("Usage: node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>]");
 }
 
 /**

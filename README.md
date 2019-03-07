@@ -9,15 +9,17 @@ node index.js -username myemail@mydomain.com -password mysecurepassword -image /
 
 ## Usage
 ```
-node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>]
+node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>]
 ```
 
 ## Setup
 1. Make sure you have node and npm installed
 2. Clone this repository
 3. `cd` to this repository
-4. run `npm install`
-5. You should be able to run the program now
+4. If you already have Chrome/Chromium installed, and you want to use that version, run `export PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true`
+5. run `npm install`
+6. You should be able to run the program now
+7. If you opted to use your previously installed version of Chrome in step 4, make sure you specify your path to Chrome when you run the program
 
 ## Notes
 * The image path will be relative to the directory you are in when you run the program.
