@@ -62,12 +62,11 @@ async function run() {
         options.executablePath = argv.executablePath;
     }
 
-    // Get the browser, and run incognito for simplicity's sake
+    // Get the browser
     let browser = await puppeteer.launch( options );
-    let context = await browser.createIncognitoBrowserContext();
 
     // Get the page
-    let page  = await context.newPage();
+    let page  = await browser.newPage();
 
     // Instagram only allows posting on their mobile site, so we have to pretend to be on mobile
     page.setUserAgent(USER_AGENT);
