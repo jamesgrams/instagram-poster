@@ -51,13 +51,19 @@ async function run() {
 
     console.debug("launching puppeteer");
 
-    // Get the browser, and run incognito for simplicity's sake
-    let browser = await puppeteer.launch({
+    // Configure puppeteer options
+    let options = {
         defaultViewport: {
-           width: 320,
-           height: 570 
+            width: 320,
+            height: 570 
         }
-    });
+    };
+    if( argv.executablePath ) {
+        options.executablePath = argv.executablePath;
+    }
+
+    // Get the browser, and run incognito for simplicity's sake
+    let browser = await puppeteer.launch( options );
     let context = await browser.createIncognitoBrowserContext();
 
     // Get the page
