@@ -159,6 +159,7 @@ async function run() {
     console.debug("waiting for share");
 
     // Get the share button and click it
+    await page.waitForXPath("//button[contains(text(),'Share')]");
     let share = await page.$x("//button[contains(text(),'Share')]");
 
     console.debug("clicking share");
