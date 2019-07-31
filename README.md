@@ -9,7 +9,7 @@ node index.js -username myemail@mydomain.com -password mysecurepassword -image /
 
 ## Usage
 ```
-node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>]
+node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>]
 ```
 
 ## Setup

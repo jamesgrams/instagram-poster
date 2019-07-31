@@ -11,8 +11,8 @@ const puppeteer = require('puppeteer');
 const argv = require('minimist')(process.argv.slice(2));
 const fs = require('fs');
 
-// iPhone 6 user agent
-const USER_AGENT = "Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25";
+// Defaults to Galaxy s9 user agent
+const USER_AGENT = argv.agent ? argv.agent : "Mozilla/5.0 (Linux; Android 8.0.0; SM-G960F Build/R16NW) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.84 Mobile Safari/537.36";
 const REQUIRED_ARGS = ['username', 'password', 'image'];
 const INSTAGRAM_LOGIN_URL = "https://instagram.com/accounts/login";
 const INSTAGRAM_URL = "https://instagram.com";
@@ -181,7 +181,7 @@ async function run() {
  * Print the correct usage of this program.
  */
 function usage() {
-    console.log("Usage: node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>]");
+    console.log("Usage: node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>]");
 }
 
 /**
