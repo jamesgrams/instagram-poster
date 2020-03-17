@@ -124,7 +124,8 @@ async function run() {
     // Upload the file
     // Note: Instagram seems to have a check in place to make sure you've viewed the file upload dialog, 
     // so we have to open it here.
-    await page.click("span[aria-label='New Post']"); 
+    await page.evaluate( function() { document.querySelector("[aria-label='New Post']").parentElement.click() } );
+    //await page.click("[aria-label='New Post']"); 
     await page.waitFor(250);
 
     console.debug("uploading the image");
