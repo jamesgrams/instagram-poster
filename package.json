@@ -17,8 +17,8 @@
     "puppeteer"
   ],
   "dependencies": {
-    "puppeteer": "^1.11.0",
-    "minimist": "^1.2.0"
+    "minimist": "^1.2.5",
+    "puppeteer": "^8.0.0"
   },
   "engines": {
     "node": ">= 6.0.0",
