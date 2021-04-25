@@ -116,14 +116,12 @@ async function run() {
     let fileInputs = await page.$$('input[type="file"]');
     let input = fileInputs[fileInputs.length - 1];
 
-    console.debug('clicking new post');
-    await page.click("[aria-label='New Post']");
-
     // Upload the file
     console.debug('uploading the image');
 
     const futureFileChooser = page.waitForFileChooser();
-    const fileChooser = await futureFileChooser;
+    await page.click("[aria-label='New Post']");
+    fileChooser = await futureFileChooser;
     await fileChooser.accept([argv.image]);
     await delay(2500);
     await input.uploadFile(argv.image);
