@@ -9,7 +9,7 @@ node index.js -username myemail@mydomain.com -password mysecurepassword -image /
 
 ## Usage
 ```
-node index.js --username <username> --password <password> --image <image_path (jpeg/jpg only)> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>]
+node index.js --username <username> --password <password> --image <image_path> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>] [-debug]
 ```
 
 ## Setup
@@ -23,6 +23,5 @@ node index.js --username <username> --password <password> --image <image_path (j
 
 ## Notes
 * The image path will be relative to the directory you are in when you run the program.
-* Instagram only allows jpeg/jpg images
 * The only way to upload an image to instagram outside of their app is on their mobile site. This program simulates the mobile experience on your computer.
 * If you are running on a Raspberry Pi, change the puppeteer version in package.json to 1.2.0 to work with the Chromium Browser for Raspbian. You should also use a custom executable path to point to Chromium Browser, since the Chromium that comes with Puppeteer does not work on Raspbian.
