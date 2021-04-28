@@ -120,7 +120,7 @@ async function run() {
     console.debug('uploading the image');
 
     try {
-      let fileChooser = await Promise.all([
+      let [fileChooser] = await Promise.all([
         page.waitForFileChooser(),
         page.click("[aria-label='New Post']")
       ]);
