@@ -119,11 +119,18 @@ async function run() {
     // Upload the file
     console.debug('uploading the image');
 
-    const futureFileChooser = page.waitForFileChooser();
-    await page.click("[aria-label='New Post']");
-    fileChooser = await futureFileChooser;
-    await fileChooser.accept([argv.image]);
-    await delay(2500);
+    try {
+      let fileChooser = await Promise.all([
+        page.waitForFileChooser(),
+        page.click("[aria-label='New Post']")
+      ]);
+      await fileChooser.accept([argv.image]);
+      await delay(2500);
+    }
+    catch( error ) {
+      // The chrome version may not support file picker interaction
+      console.debug('could not use file picker');
+    }
     await input.uploadFile(argv.image);
     await delay(2500);
 
