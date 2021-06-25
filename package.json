@@ -6,7 +6,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jamesgrams/instagram-poster.git"
+    "url": "git+https://github.com/jamesgrams/instagram-poster.git"
   },
   "license": "MIT",
   "keywords": [
@@ -23,5 +23,13 @@
   "engines": {
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
+  },
+  "bugs": {
+    "url": "https://github.com/jamesgrams/instagram-poster/issues"
+  },
+  "homepage": "https://github.com/jamesgrams/instagram-poster#readme",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
