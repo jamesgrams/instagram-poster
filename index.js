@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * Script to post an image to instagram with Puppeteer
  * Author: James Grams
