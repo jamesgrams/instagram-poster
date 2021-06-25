@@ -189,7 +189,7 @@ async function run() {
  */
 function usage() {
     console.log(
-        'Usage: node index.js --username <username> --password <password> --image <image_path> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>] [-debug]'
+        'Usage: instagram-poster --username <username> --password <password> --image <image_path> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>] [-debug]'
     );
 }
 

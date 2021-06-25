@@ -4,15 +4,23 @@ The goal of this project is to make it easy to programatically post an image to 
 
 ## Example
 ```
-node index.js -username myemail@mydomain.com -password mysecurepassword -image /Users/me/Desktop/mypic.jpg -caption "Check out my picture"
+instagram-poster -username myemail@mydomain.com -password mysecurepassword -image /Users/me/Desktop/mypic.jpg -caption "Check out my picture"
 ```
 
 ## Usage
+```
+instagram-poster --username <username> --password <password> --image <image_path> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>] [-debug]
+```
+or, if installed locally:
 ```
 node index.js --username <username> --password <password> --image <image_path> [-caption <caption>] [-executablePath <chrome_path>] [-agent <user_agent>] [-debug]
 ```
 
 ## Setup
+### With npm
+`npm install -g instagram-poster`
+
+### From Git
 1. Make sure you have node and npm installed
 2. Clone this repository
 3. `cd` to this repository
