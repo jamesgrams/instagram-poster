@@ -55,8 +55,7 @@ async function run() {
                 width: 320,
                 height: 570,
             },
-            args: ['--lang=en'],
-            headless: false
+            args: ['--lang=en']
         };
         if (argv.executablePath) {
             options.executablePath = argv.executablePath;
