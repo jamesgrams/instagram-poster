@@ -7,7 +7,9 @@
  */
 
 /************* Set Up *************/
-const puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer-extra');
+const StealthPlugin = require('puppeteer-extra-plugin-stealth');
+puppeteer.use(StealthPlugin());
 const argv = require('minimist')(process.argv.slice(2));
 const fs = require('fs');
 
@@ -53,6 +55,8 @@ async function run() {
                 width: 320,
                 height: 570,
             },
+            args: ['--lang=en'],
+            headless: false
         };
         if (argv.executablePath) {
             options.executablePath = argv.executablePath;
@@ -74,6 +78,17 @@ async function run() {
 
         // Go to instagram.com
         await page.goto(INSTAGRAM_LOGIN_URL);
+        await delay(2500);
+
+        //Accept cookies
+        let cookiesButton = await page.$x("//button[contains(., 'Accept All')]");
+        if(cookiesButton.length > 0){
+            console.debug('Cookies modal found so click on Accept All.');
+            await cookiesButton[0].click();
+        }
+        else{
+            console.debug('Cookies modal not found no need to accept');
+        }
 
         console.debug('waiting for the username input');
 
@@ -99,7 +114,13 @@ async function run() {
 
         // Click the login button
         let button = await page.$x("//div[contains(text(),'Log In')]//..");
-        await button[0].click();
+        if(button.length > 0){
+            await button[0].click();
+        }
+        else{
+            console.debug('login button not found');
+            await page.screenshot({ path: 'screenshot.png' })
+        }
 
         // Make sure we are signed in
         await page.waitForNavigation();
