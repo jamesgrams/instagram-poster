@@ -82,11 +82,11 @@ async function run() {
         //Accept cookies
         let cookiesButton = await page.$x("//button[contains(., 'Accept All')]");
         if(cookiesButton.length > 0){
-            console.debug('Cookies modal found so click on Accept All.');
+            console.debug('cookies modal found so click on Accept All.');
             await cookiesButton[0].click();
         }
         else{
-            console.debug('Cookies modal not found no need to accept');
+            console.debug('cookies modal not found no need to accept');
         }
 
         console.debug('waiting for the username input');
@@ -152,6 +152,10 @@ async function run() {
         catch( error ) {
             // The chrome version may not support file picker interaction
             console.debug('could not use file picker');
+            try {
+		await page.click("[aria-label='New Post']");
+            }
+            catch(err) {/*ok*/}
         }
         await input.uploadFile(argv.image);
         await delay(2500);

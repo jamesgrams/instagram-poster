@@ -1,7 +1,7 @@
 {
   "name": "instagram-poster",
   "author": "James Grams <james@game103.net> (https://game103.net)",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI to post images to Instagram using Puppeteer",
   "main": "index.js",
   "repository": {
